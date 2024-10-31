@@ -1,12 +1,31 @@
 import { 
+  createTheme,
   Stack,
   ThemeProvider,
-  Typography
+  Typography,
 } from "@mui/material";
 
-import { theme } from "./theme";
-
 export default function App() {
+  const theme = createTheme({
+    typography: {
+      fontFamily: "Pretendard",
+      body1: {
+        fontSize: "16px",  
+        fontWeight: 100,
+      },
+    },
+    components: {
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            fontFamily: "Pretendard",
+            fontWeight: 350,
+          },
+        },
+      }
+    },
+  });
+
   return (
     <ThemeProvider theme={theme}>
       <Stack
